@@ -53,14 +53,6 @@ Commit:
 
 ## In Progress
 
-### TASK-2: Data loading and basic structure
-Load `sales-data.csv` and validate its structure before use.
-- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
-- [ ] Data validation handles a missing or malformed CSV without crashing the app
-- [ ] Row count matches the expected 482 transaction records
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -71,3 +63,12 @@ Set up the Python project structure, dependencies, and Streamlit entry point.
 
 Commit: bb4619e
 Notes: Streamlit's first-run setup blocked a background run waiting for an onboarding email prompt on stdin; fixed with a local `~/.streamlit/credentials.toml` (machine config, not a project file). No app code changes needed.
+
+### TASK-2: Data loading and basic structure
+Load `sales-data.csv` and validate its structure before use.
+- [x] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
+- [x] Data validation handles a missing or malformed CSV without crashing the app
+- [x] Row count matches the expected 482 transaction records
+
+Commit: 584632d
+Notes: Bare `pytest` couldn't resolve the root-level `calculations` module (no `__init__.py` in `tests/`, no root `conftest.py`), so an empty `conftest.py` was added at the project root to fix import resolution.
