@@ -61,12 +61,13 @@ Commit:
 
 ## In Progress
 
+## Done
+
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure, dependencies, and Streamlit entry point.
-- [ ] `requirements.txt` includes streamlit, pandas, and plotly
-- [ ] `app.py` exists and runs with `streamlit run app.py` without errors
-- [ ] Project folder structure matches the architecture in the PRD (e.g. `data/` for the CSV)
+- [x] `requirements.txt` includes streamlit, pandas, and plotly
+- [x] `app.py` exists and runs with `streamlit run app.py` without errors
+- [x] Project folder structure matches the architecture in the PRD (e.g. `data/` for the CSV)
 
-Commit:
-
-## Done
+Commit: bb4619e
+Notes: Streamlit's first-run setup blocked a background run waiting for an onboarding email prompt on stdin; fixed with a local `~/.streamlit/credentials.toml` (machine config, not a project file). No app code changes needed.
