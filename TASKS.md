@@ -37,14 +37,6 @@ Commit:
 
 ## In Progress
 
-### TASK-4: Sales trend chart
-Build the line chart showing sales over time.
-- [ ] Line chart renders sales by date/month with time on the x-axis and sales amount on the y-axis
-- [ ] Tooltips show exact values on hover
-- [ ] Chart renders within 2 seconds of data load
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -73,3 +65,12 @@ Display Total Sales and Total Orders as prominent KPI cards.
 
 Commit: 7635406
 Notes: Verified the KPI values (Total Sales $116,500.21, Total Orders 482) directly against the real CSV via `calculations.py` and confirmed the running server returns no errors; no browser tool was available this session to visually screenshot the rendered metric cards.
+
+### TASK-4: Sales trend chart
+Build the line chart showing sales over time.
+- [x] Line chart renders sales by date/month with time on the x-axis and sales amount on the y-axis
+- [x] Tooltips show exact values on hover
+- [x] Chart renders within 2 seconds of data load
+
+Commit: 3d38319
+Notes: Verified `sales_by_month` returns all 12 months of 2024 summing to the same total as TASK-3's Total Sales, and confirmed the running server returns no errors; tooltip behavior and render speed are Plotly/Streamlit defaults, not separately tested — no browser tool was available this session to confirm them visually.
