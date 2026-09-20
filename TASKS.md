@@ -11,14 +11,6 @@ A milestone moves to Done only when:
 
 ## To Do
 
-### TASK-4: Sales trend chart
-Build the line chart showing sales over time.
-- [ ] Line chart renders sales by date/month with time on the x-axis and sales amount on the y-axis
-- [ ] Tooltips show exact values on hover
-- [ ] Chart renders within 2 seconds of data load
-
-Commit:
-
 ### TASK-5: Category and region breakdowns
 Build the bar charts for sales by category and by region.
 - [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with tooltips
@@ -44,6 +36,14 @@ Deploy the dashboard publicly and confirm stakeholder access.
 Commit:
 
 ## In Progress
+
+### TASK-4: Sales trend chart
+Build the line chart showing sales over time.
+- [ ] Line chart renders sales by date/month with time on the x-axis and sales amount on the y-axis
+- [ ] Tooltips show exact values on hover
+- [ ] Chart renders within 2 seconds of data load
+
+Commit:
 
 ## Done
 
