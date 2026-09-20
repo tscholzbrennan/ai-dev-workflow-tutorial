@@ -36,6 +36,16 @@ def test_load_data_raises_on_missing_column(tmp_path):
         load_data(str(csv_path))
 
 
+def test_load_data_raises_on_null_value(tmp_path):
+    csv_path = tmp_path / "blank.csv"
+    csv_path.write_text(
+        "date,order_id,product,category,region,quantity,unit_price,total_amount\n"
+        "2024-01-15,ORD-1,Widget,,North,2,5.0,10.0\n"
+    )
+    with pytest.raises(ValueError, match="Missing value"):
+        load_data(str(csv_path))
+
+
 def test_load_data_returns_dataframe_with_parsed_types(tmp_path):
     csv_path = tmp_path / "good.csv"
     csv_path.write_text(

@@ -20,6 +20,11 @@ def load_data(path: str) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Missing required column(s): {', '.join(missing)}")
 
+    null_counts = df[REQUIRED_COLUMNS].isnull().sum()
+    columns_with_nulls = null_counts[null_counts > 0].index.tolist()
+    if columns_with_nulls:
+        raise ValueError(f"Missing value(s) in required column(s): {', '.join(columns_with_nulls)}")
+
     try:
         df["date"] = pd.to_datetime(df["date"])
     except (ValueError, TypeError) as exc:
