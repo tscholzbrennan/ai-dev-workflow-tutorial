@@ -29,14 +29,6 @@ Commit:
 
 ## In Progress
 
-### TASK-5: Category and region breakdowns
-Build the bar charts for sales by category and by region.
-- [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with tooltips
-- [ ] Region bar chart shows all 4 regions, sorted highest to lowest, with tooltips
-- [ ] Electronics appears as the top category, matching the PRD's expected output
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -74,3 +66,12 @@ Build the line chart showing sales over time.
 
 Commit: 3d38319
 Notes: Verified `sales_by_month` returns all 12 months of 2024 summing to the same total as TASK-3's Total Sales, and confirmed the running server returns no errors; tooltip behavior and render speed are Plotly/Streamlit defaults, not separately tested — no browser tool was available this session to confirm them visually.
+
+### TASK-5: Category and region breakdowns
+Build the bar charts for sales by category and by region.
+- [x] Category bar chart shows all 5 categories, sorted highest to lowest, with tooltips
+- [x] Region bar chart shows all 4 regions, sorted highest to lowest, with tooltips
+- [x] Electronics appears as the top category, matching the PRD's expected output
+
+Commit: 555ae4e
+Notes: Verified `sales_by_category` (5 categories, Electronics highest at $42,683.67) and `sales_by_region` (4 regions, North highest) against the real CSV, both sorted descending as required; confirmed the running server returns no errors. Tooltip rendering is a Plotly default, not separately tested — no browser tool was available this session to confirm it visually.
