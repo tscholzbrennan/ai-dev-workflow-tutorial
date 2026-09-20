@@ -45,14 +45,6 @@ Commit:
 
 ## In Progress
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders as prominent KPI cards.
-- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
-- [ ] Total Orders is calculated as a count of transactions and formatted with separators
-- [ ] KPI values match the expected output in the PRD (~$116,500 / 482 orders)
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -72,3 +64,12 @@ Load `sales-data.csv` and validate its structure before use.
 
 Commit: 584632d
 Notes: Bare `pytest` couldn't resolve the root-level `calculations` module (no `__init__.py` in `tests/`, no root `conftest.py`), so an empty `conftest.py` was added at the project root to fix import resolution.
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders as prominent KPI cards.
+- [x] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
+- [x] Total Orders is calculated as a count of transactions and formatted with separators
+- [x] KPI values match the expected output in the PRD (~$116,500 / 482 orders)
+
+Commit: 7635406
+Notes: Verified the KPI values (Total Sales $116,500.21, Total Orders 482) directly against the real CSV via `calculations.py` and confirmed the running server returns no errors; no browser tool was available this session to visually screenshot the rendered metric cards.
