@@ -1,0 +1,32 @@
+import pandas as pd
+import pytest
+
+from calculations import load_data
+
+
+def test_load_data_raises_on_missing_file(tmp_path):
+    missing_path = tmp_path / "does_not_exist.csv"
+    with pytest.raises(ValueError, match="Could not find data file"):
+        load_data(str(missing_path))
+
+
+def test_load_data_raises_on_missing_column(tmp_path):
+    csv_path = tmp_path / "bad.csv"
+    csv_path.write_text(
+        "date,order_id,product,region,quantity,unit_price,total_amount\n"
+        "2024-01-15,ORD-1,Widget,North,1,10.0,10.0\n"
+    )
+    with pytest.raises(ValueError, match="Missing required column"):
+        load_data(str(csv_path))
+
+
+def test_load_data_returns_dataframe_with_parsed_types(tmp_path):
+    csv_path = tmp_path / "good.csv"
+    csv_path.write_text(
+        "date,order_id,product,category,region,quantity,unit_price,total_amount\n"
+        "2024-01-15,ORD-1,Widget,Electronics,North,2,5.0,10.0\n"
+    )
+    df = load_data(str(csv_path))
+    assert len(df) == 1
+    assert pd.api.types.is_datetime64_any_dtype(df["date"])
+    assert df.loc[0, "total_amount"] == 10.0
