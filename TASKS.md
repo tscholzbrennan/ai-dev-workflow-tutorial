@@ -11,14 +11,6 @@ A milestone moves to Done only when:
 
 ## To Do
 
-### TASK-2: Data loading and basic structure
-Load `sales-data.csv` and validate its structure before use.
-- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
-- [ ] Data validation handles a missing or malformed CSV without crashing the app
-- [ ] Row count matches the expected 482 transaction records
-
-Commit:
-
 ### TASK-3: KPI cards implementation
 Display Total Sales and Total Orders as prominent KPI cards.
 - [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
@@ -60,6 +52,14 @@ Deploy the dashboard publicly and confirm stakeholder access.
 Commit:
 
 ## In Progress
+
+### TASK-2: Data loading and basic structure
+Load `sales-data.csv` and validate its structure before use.
+- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
+- [ ] Data validation handles a missing or malformed CSV without crashing the app
+- [ ] Row count matches the expected 482 transaction records
+
+Commit:
 
 ## Done
 
