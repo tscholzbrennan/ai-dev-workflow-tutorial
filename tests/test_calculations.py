@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from calculations import compute_total_orders, compute_total_sales, load_data
+from calculations import compute_total_orders, compute_total_sales, load_data, sales_by_month
 
 
 def _sample_df():
@@ -49,3 +49,10 @@ def test_compute_total_sales():
 def test_compute_total_orders():
     df = _sample_df()
     assert compute_total_orders(df) == 4
+
+
+def test_sales_by_month():
+    df = _sample_df()
+    result = sales_by_month(df)
+    assert list(result["month"]) == ["2024-01", "2024-02"]
+    assert list(result["total_amount"]) == [150.0, 225.0]

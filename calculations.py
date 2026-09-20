@@ -40,3 +40,13 @@ def compute_total_sales(df: pd.DataFrame) -> float:
 
 def compute_total_orders(df: pd.DataFrame) -> int:
     return len(df)
+
+
+def sales_by_month(df: pd.DataFrame) -> pd.DataFrame:
+    return (
+        df.assign(month=df["date"].dt.strftime("%Y-%m"))
+        .groupby("month", as_index=False)["total_amount"]
+        .sum()
+        .sort_values("month")
+        .reset_index(drop=True)
+    )
