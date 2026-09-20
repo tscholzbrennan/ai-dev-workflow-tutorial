@@ -1,7 +1,16 @@
 import pandas as pd
 import pytest
 
-from calculations import load_data
+from calculations import compute_total_orders, compute_total_sales, load_data
+
+
+def _sample_df():
+    return pd.DataFrame({
+        "date": pd.to_datetime(["2024-01-15", "2024-01-20", "2024-02-05", "2024-02-10"]),
+        "category": ["Electronics", "Audio", "Electronics", "Accessories"],
+        "region": ["North", "South", "North", "West"],
+        "total_amount": [100.0, 50.0, 200.0, 25.0],
+    })
 
 
 def test_load_data_raises_on_missing_file(tmp_path):
@@ -30,3 +39,13 @@ def test_load_data_returns_dataframe_with_parsed_types(tmp_path):
     assert len(df) == 1
     assert pd.api.types.is_datetime64_any_dtype(df["date"])
     assert df.loc[0, "total_amount"] == 10.0
+
+
+def test_compute_total_sales():
+    df = _sample_df()
+    assert compute_total_sales(df) == 375.0
+
+
+def test_compute_total_orders():
+    df = _sample_df()
+    assert compute_total_orders(df) == 4

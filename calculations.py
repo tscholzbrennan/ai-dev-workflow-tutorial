@@ -32,3 +32,11 @@ def load_data(path: str) -> pd.DataFrame:
             raise ValueError(f"Could not parse '{col}' column as numeric: {exc}") from exc
 
     return df
+
+
+def compute_total_sales(df: pd.DataFrame) -> float:
+    return float(df["total_amount"].sum())
+
+
+def compute_total_orders(df: pd.DataFrame) -> int:
+    return len(df)
