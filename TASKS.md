@@ -11,14 +11,6 @@ A milestone moves to Done only when:
 
 ## To Do
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders as prominent KPI cards.
-- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
-- [ ] Total Orders is calculated as a count of transactions and formatted with separators
-- [ ] KPI values match the expected output in the PRD (~$116,500 / 482 orders)
-
-Commit:
-
 ### TASK-4: Sales trend chart
 Build the line chart showing sales over time.
 - [ ] Line chart renders sales by date/month with time on the x-axis and sales amount on the y-axis
@@ -52,6 +44,14 @@ Deploy the dashboard publicly and confirm stakeholder access.
 Commit:
 
 ## In Progress
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders as prominent KPI cards.
+- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
+- [ ] Total Orders is calculated as a count of transactions and formatted with separators
+- [ ] KPI values match the expected output in the PRD (~$116,500 / 482 orders)
+
+Commit:
 
 ## Done
 
