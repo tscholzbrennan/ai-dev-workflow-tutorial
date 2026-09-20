@@ -11,14 +11,6 @@ A milestone moves to Done only when:
 
 ## To Do
 
-### TASK-5: Category and region breakdowns
-Build the bar charts for sales by category and by region.
-- [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with tooltips
-- [ ] Region bar chart shows all 4 regions, sorted highest to lowest, with tooltips
-- [ ] Electronics appears as the top category, matching the PRD's expected output
-
-Commit:
-
 ### TASK-6: Testing and refinement
 Verify the dashboard against the PRD's acceptance criteria and polish the presentation.
 - [ ] Dashboard loads within 5 seconds with no errors or warnings
@@ -36,6 +28,14 @@ Deploy the dashboard publicly and confirm stakeholder access.
 Commit:
 
 ## In Progress
+
+### TASK-5: Category and region breakdowns
+Build the bar charts for sales by category and by region.
+- [ ] Category bar chart shows all 5 categories, sorted highest to lowest, with tooltips
+- [ ] Region bar chart shows all 4 regions, sorted highest to lowest, with tooltips
+- [ ] Electronics appears as the top category, matching the PRD's expected output
+
+Commit:
 
 ## Done
 
