@@ -15,8 +15,10 @@ st.title("ShopSmart Sales Dashboard")
 
 DATA_PATH = "data/sales-data.csv"
 
+cached_load_data = st.cache_data(load_data)
+
 try:
-    sales_df = load_data(DATA_PATH)
+    sales_df = cached_load_data(DATA_PATH)
 except ValueError as e:
     st.error(f"Could not load sales data: {e}")
     st.stop()
