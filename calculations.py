@@ -57,19 +57,18 @@ def sales_by_month(df: pd.DataFrame) -> pd.DataFrame:
     )
 
 
-def sales_by_category(df: pd.DataFrame) -> pd.DataFrame:
+def _sales_by(df: pd.DataFrame, column: str) -> pd.DataFrame:
     return (
-        df.groupby("category", as_index=False)["total_amount"]
+        df.groupby(column, as_index=False)["total_amount"]
         .sum()
         .sort_values("total_amount", ascending=False)
         .reset_index(drop=True)
     )
+
+
+def sales_by_category(df: pd.DataFrame) -> pd.DataFrame:
+    return _sales_by(df, "category")
 
 
 def sales_by_region(df: pd.DataFrame) -> pd.DataFrame:
-    return (
-        df.groupby("region", as_index=False)["total_amount"]
-        .sum()
-        .sort_values("total_amount", ascending=False)
-        .reset_index(drop=True)
-    )
+    return _sales_by(df, "region")
