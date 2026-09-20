@@ -21,14 +21,6 @@ Commit:
 
 ## In Progress
 
-### TASK-6: Testing and refinement
-Verify the dashboard against the PRD's acceptance criteria and polish the presentation.
-- [ ] Dashboard loads within 5 seconds with no errors or warnings
-- [ ] All KPI and chart values match expected calculations from the CSV
-- [ ] Layout and labels are clear enough for an executive presentation
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -75,3 +67,12 @@ Build the bar charts for sales by category and by region.
 
 Commit: 555ae4e
 Notes: Verified `sales_by_category` (5 categories, Electronics highest at $42,683.67) and `sales_by_region` (4 regions, North highest) against the real CSV, both sorted descending as required; confirmed the running server returns no errors. Tooltip rendering is a Plotly default, not separately tested — no browser tool was available this session to confirm it visually.
+
+### TASK-6: Testing and refinement
+Verify the dashboard against the PRD's acceptance criteria and polish the presentation.
+- [x] Dashboard loads within 5 seconds with no errors or warnings
+- [x] All KPI and chart values match expected calculations from the CSV
+- [x] Layout and labels are clear enough for an executive presentation
+
+Commit: 1d7e513
+Notes: Full 8-test suite passes; ran the app and confirmed load time well under 5s with the only log line being a pre-existing, unrelated `urllib3`/OpenSSL environment warning (present since TASK-1, not an app error). One real gap found and fixed: chart axes were showing raw column names (`total_amount`, `month`) instead of readable labels, which fell short of "professional appearance for executives" — added a `labels` mapping to all three Plotly calls in `app.py`. Re-verified all values end-to-end against the CSV after the fix (Total Sales $116,500.21, Total Orders 482, 12 months, 5 categories/Electronics top, 4 regions/North top). No browser tool was available this session, so the visual layout/label check was done by reading the rendered chart config rather than a screenshot.
