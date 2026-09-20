@@ -11,14 +11,6 @@ A milestone moves to Done only when:
 
 ## To Do
 
-### TASK-1: Environment setup and project initialization
-Set up the Python project structure, dependencies, and Streamlit entry point.
-- [ ] `requirements.txt` includes streamlit, pandas, and plotly
-- [ ] `app.py` exists and runs with `streamlit run app.py` without errors
-- [ ] Project folder structure matches the architecture in the PRD (e.g. `data/` for the CSV)
-
-Commit:
-
 ### TASK-2: Data loading and basic structure
 Load `sales-data.csv` and validate its structure before use.
 - [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
@@ -68,5 +60,13 @@ Deploy the dashboard publicly and confirm stakeholder access.
 Commit:
 
 ## In Progress
+
+### TASK-1: Environment setup and project initialization
+Set up the Python project structure, dependencies, and Streamlit entry point.
+- [ ] `requirements.txt` includes streamlit, pandas, and plotly
+- [ ] `app.py` exists and runs with `streamlit run app.py` without errors
+- [ ] Project folder structure matches the architecture in the PRD (e.g. `data/` for the CSV)
+
+Commit:
 
 ## Done
