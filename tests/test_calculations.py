@@ -1,7 +1,14 @@
 import pandas as pd
 import pytest
 
-from calculations import compute_total_orders, compute_total_sales, load_data, sales_by_month
+from calculations import (
+    compute_total_orders,
+    compute_total_sales,
+    load_data,
+    sales_by_category,
+    sales_by_month,
+    sales_by_region,
+)
 
 
 def _sample_df():
@@ -56,3 +63,17 @@ def test_sales_by_month():
     result = sales_by_month(df)
     assert list(result["month"]) == ["2024-01", "2024-02"]
     assert list(result["total_amount"]) == [150.0, 225.0]
+
+
+def test_sales_by_category():
+    df = _sample_df()
+    result = sales_by_category(df)
+    assert list(result["category"]) == ["Electronics", "Audio", "Accessories"]
+    assert list(result["total_amount"]) == [300.0, 50.0, 25.0]
+
+
+def test_sales_by_region():
+    df = _sample_df()
+    result = sales_by_region(df)
+    assert list(result["region"]) == ["North", "South", "West"]
+    assert list(result["total_amount"]) == [300.0, 50.0, 25.0]
